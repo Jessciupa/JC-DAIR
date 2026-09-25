@@ -1,0 +1,68 @@
+{
+  "seed": 0,
+  "n_rows": 20000,
+  "TAU": 12.680325158130032,
+  "TAU_definition": "median score of the uniform (environment-distribution) rows",
+  "features": [
+    "p_alive",
+    "n_estimated",
+    "urgency",
+    "is_closed"
+  ],
+  "target": "score",
+  "label": "decision = int(score >= TAU)",
+  "feature_ranges": {
+    "p_alive": [
+      0.0,
+      1.0
+    ],
+    "n_estimated": [
+      1.0,
+      5.0
+    ],
+    "urgency": [
+      1,
+      3,
+      5
+    ],
+    "is_closed": [
+      0,
+      1
+    ]
+  },
+  "feature_types": {
+    "p_alive": "continuous (== 1.0 when is_closed == 0)",
+    "n_estimated": "continuous",
+    "urgency": "discrete {1, 3, 5}",
+    "is_closed": "binary"
+  },
+  "rescue_success_by_urgency": {
+    "5": 0.5,
+    "3": 0.7,
+    "1": 0.95
+  },
+  "pgd": {
+    "perturbable": {
+      "p_alive": "only where is_closed == 1; clip to [0, 1]"
+    },
+    "frozen": [
+      "n_estimated",
+      "urgency",
+      "is_closed"
+    ]
+  },
+  "counts": {
+    "rows": 20000,
+    "by_split": {
+      "train": 14000,
+      "val": 3000,
+      "test": 3000
+    },
+    "by_source": {
+      "uniform": 14000,
+      "boundary": 3000,
+      "p9_kink": 3000
+    },
+    "decision_rate": 0.46925
+  }
+}
