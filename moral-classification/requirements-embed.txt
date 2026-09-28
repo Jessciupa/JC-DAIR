@@ -1,0 +1,9 @@
+# Optional: only needed to rebuild the dataset (dataset/moral_machine.py, dataset/build.py),
+# regenerate embeddings/ (python src/prepare.py), and for the LIME coursework. Install on top of
+# requirements.txt. The CPU build of torch is enough.
+-r requirements.txt
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch~=2.14.0
+sentence-transformers~=6.1.0
+pandas~=3.0.0
+lime~=0.2.0
