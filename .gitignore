@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 venv/
 .ipynb_checkpoints/
+*.vclo
+moral-regression/models/

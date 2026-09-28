@@ -1,0 +1,28 @@
+{
+  "seed": 0,
+  "episodes": 1000,
+  "timesteps": 20,
+  "features": [
+    "R",
+    "p_alive",
+    "n_estimated",
+    "urgency",
+    "is_closed"
+  ],
+  "target": "effort",
+  "rows": {
+    "train": 14000,
+    "val": 3000,
+    "test": 3000
+  },
+  "TAU": 5.0,
+  "K_EFFORT": 0.05,
+  "R_MAX": 1.0,
+  "RISK_RECOVERY": 0.2,
+  "RISK_PER_EFFORT": 1.0,
+  "DECAY": {
+    "1": 0.005,
+    "3": 0.02,
+    "5": 0.05
+  }
+}
