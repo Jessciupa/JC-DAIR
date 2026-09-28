@@ -23,7 +23,7 @@ It is used to train a ReLU MLP, attack it with PGD, and later verify it with Veh
 
 Installation (recommended for lab computers)
 ------------
-From the repository root:
+This folder has its own environment. From inside `moral-regression/`:
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
@@ -31,10 +31,11 @@ hash -r
 uv python install 3.11
 uv venv --python 3.11 .venv
 source .venv/bin/activate
-uv pip install -r moral-regression/requirements.txt
+uv pip install -r requirements.txt
 ```
-When opening the notebook, select the `.venv` Python as the kernel. Run it from inside
-`moral-regression/`, as it reads `data/` and imports `simulation.py` by relative path.
+Python 3.11 is needed for Vehicle and Marabou. When opening the notebooks, select this `.venv`
+as the kernel. Run them from inside `moral-regression/`, as they read `data/` and import
+`simulation.py` by relative path.
 
 ## The world
 

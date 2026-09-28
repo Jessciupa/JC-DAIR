@@ -8,9 +8,9 @@
 set -e
 cd "$(dirname "$0")"
 
-# Use vehicle and Marabou from the repository's .venv, whether or not it is activated
-if [ -d ../.venv/bin ]; then
-  PATH="$(cd ../.venv/bin && pwd):$PATH"
+# Use vehicle and Marabou from this folder's .venv, whether or not it is activated
+if [ -d .venv/bin ]; then
+  PATH="$(cd .venv/bin && pwd):$PATH"
 fi
 
 NETWORK=${1:-models/base.onnx}
