@@ -1,0 +1,79 @@
+{
+  "seed": 0,
+  "runs": 50,
+  "years": 20,
+  "steps_per_year": 12,
+  "scenarios": [
+    "baseline",
+    "social_influence"
+  ],
+  "clusters": [
+    "western",
+    "eastern",
+    "southern"
+  ],
+  "dimensions": [
+    "action",
+    "more",
+    "young",
+    "female",
+    "fit",
+    "status",
+    "human",
+    "lawful",
+    "pedestrians"
+  ],
+  "A_CENTRE": [
+    [
+      0.3,
+      0.1,
+      0.1
+    ],
+    [
+      0.15,
+      0.2,
+      0.15
+    ],
+    [
+      0.1,
+      0.1,
+      0.35
+    ]
+  ],
+  "A_RADIUS": [
+    [
+      0.09,
+      0.03,
+      0.03
+    ],
+    [
+      0.045,
+      0.06,
+      0.045
+    ],
+    [
+      0.03,
+      0.03,
+      0.105
+    ]
+  ],
+  "GAMMA": 0.2,
+  "SIGMA": [
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+  ],
+  "choices_shape": [
+    "scenario",
+    "run",
+    "year",
+    "cluster",
+    "dilemma"
+  ]
+}

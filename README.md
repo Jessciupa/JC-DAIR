@@ -4,14 +4,16 @@ How can we state what an ethical agent must do precisely enough to check it? Thi
 explores **logical specifications** of ethical behaviour for learning agents: writing ethical
 norms and principles in a formal language, training neural networks that should respect them,
 attacking those networks with PGD, and formally verifying them with
-[Vehicle](https://github.com/vehicle-lang/vehicle) and Marabou.
+[Vehicle](https://github.com/vehicle-lang/vehicle) and Marabou, and with
+[CORA](https://cora.in.tum.de) reachability.
 
-It has two parts, each building on one paper.
+It has three parts, each building on one paper.
 
 | folder | specification | builds on |
 |---|---|---|
 | [`moral-classification/`](moral-classification/README.md) | Moral Machine dilemmas in natural language, each cultural cluster's choice as **LTL** | Ethical Reward Machine (NeSy 2024), Exploring Verification Frameworks for Social Choice Alignment (NeSy 2025) |
 | [`moral-regression/`](moral-regression/README.md) | ethical principles as **properties** of a rescue agent's network | Interpretable Moral Decision-making under Epistemic Uncertainty (NeSy 2026) |
+| [`moral-drift/`](moral-drift/README.md) | how long a classifier stays aligned as the clusters' preferences drift, verified by **reachability** in CORA | Exploring Verification Frameworks for Social Choice Alignment (NeSy 2025) |
 
 ## Natural language to LTL, across cultures: `moral-classification/`
 
@@ -61,6 +63,15 @@ ethical principles as Vehicle properties of the network, with the first, maximis
 utility, as a worked example, and asks whether the principle conflicts reported in the paper also
 appear under formal verification.
 
+## Alignment over time: `moral-drift/`
+
+**Motivation.** A car is aligned once, at deployment, but the people it was aligned to keep
+changing their minds. `moral-drift/` fits each Moral Machine cluster's preferences from the votes,
+lets them drift under Friedkin-Johnsen opinion dynamics with uncertain coupling, and uses CORA
+reachability to find how long a classifier frozen at deployment provably keeps agreeing with its
+cluster: an example of formal verification applied to a social question rather than a
+safety-critical one.
+
 ## Getting started
 
 Each folder is self-contained, with its own `requirements.txt` and its own Python 3.11 `.venv`
@@ -70,5 +81,6 @@ the order in which to run its notebooks.
 ```
 .
 ├── moral-classification     - Moral Machine dilemmas -> each cluster's choice as LTL, PGD and Vehicle verification
+├── moral-drift              - 20-year drift of each cluster's preferences, and CORA reachability of the alignment horizon
 └── moral-regression         - rescue agent effort, PGD study, and ethical principles as Vehicle properties
 ```
